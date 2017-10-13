@@ -10,12 +10,11 @@ vector< string > vs;
 
 bool isPrime(int n, int x){
     int sum = n+x;
-    int sz = sqrt(sum);
 
     if(sum<3) return true;
     if(!(sum&1)) return false;
 
-    for(int i=3; i<= sz; i+=2){
+    for(int i=3; i*i <= sum; i+=2){
         if(!(sum%i)){
             return false;
         }
@@ -44,6 +43,7 @@ void backTrack(int n, int idx, int *ans, int *arr, int *taken){
                 ans[idx] = arr[i];
                 backTrack(n, idx+1, ans, arr, taken);
             }
+
             taken[i] = false;
         }
     }
@@ -53,8 +53,8 @@ void backTrack(int n, int idx, int *ans, int *arr, int *taken){
 
 int main(){
 
-//    freopen("in.txt","rt",stdin);
-//    freopen("out.txt","wt",stdout);
+//    freopen("input.txt","rt",stdin);
+//    freopen("output.txt","wt",stdout);
 
     int n,T=0, arr[2342],ans[2343];
 
