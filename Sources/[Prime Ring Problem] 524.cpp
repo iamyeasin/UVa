@@ -6,27 +6,12 @@
 #define mx 100
 
 using namespace std;
-vector< string > vs;
-
-bool isPrime(int n, int x){
-    int sum = n+x;
-
-    if(sum<3) return true;
-    if(!(sum&1)) return false;
-
-    for(int i=3; i*i <= sum; i+=2){
-        if(!(sum%i)){
-            return false;
-        }
-    }
-    return true;
-
-}
+bool primes[55] = {0,1,1,1,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0};
 
 void backTrack(int n, int idx, int *ans, int *arr, int *taken){
 
     if(idx == n) {
-        if(ans[0] != 1 || !isPrime(ans[0],ans[n-1])) return;
+       if(ans[0] != 1 || !(primes[ans[0]+ans[n-1]])) return;
         for(int k=0; k<n; k++) {
             if(k == (n-1))pf("%d\n",ans[k]);
             else pf("%d ",ans[k]);
@@ -39,7 +24,8 @@ void backTrack(int n, int idx, int *ans, int *arr, int *taken){
         if(!taken[i]){
             taken[i] = 1;
 
-            if(isPrime(ans[idx-1],arr[i])){
+           if(primes[ans[idx-1]+arr[i]])
+{
                 ans[idx] = arr[i];
                 backTrack(n, idx+1, ans, arr, taken);
             }
