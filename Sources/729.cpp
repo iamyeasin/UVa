@@ -4,15 +4,15 @@
 
 using namespace std;
 
-void com(string soFar, string rest){
-    if(rest.empty()){
-            cout << soFar << endl;//    return;
-            //vc.push_back(soFar);
+void com(string soFar, string rest, int N){
+    if(rest == ""){
+        for(int i=0; i<N; i++)pf("%c",soFar[i]);
+        puts("");
     }
     else {
       for(int i=0; i<rest.length(); i++){
         string remain = rest.substr(0,i) + rest.substr(i+1);
-            com(soFar+rest[i],remain);
+            com(soFar+rest[i],remain, N);
             while(rest[i] == rest[i+1])i++;
         }
 
@@ -36,7 +36,7 @@ int main()
         for(int z = 0; z<(N-H); z++)combination += "0";
         for(int z = 0; z<H; z++)combination += "1";
         T++;
-        com("",combination);
+        com("",combination, N);
 
         combination = "";
 
@@ -44,4 +44,3 @@ int main()
 
     return 0;
 }
-
