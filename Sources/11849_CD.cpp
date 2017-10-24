@@ -21,7 +21,7 @@ int main(){
         long counter = 0,idx = 0;
         for(int i=0; i<b; i++){
             sf("%d",&x);
-            while(arr[idx] <= x){
+            while(arr[idx] <= x && idx <b){
                 if(x == arr[idx]){
                     counter++;
                 } idx++;
