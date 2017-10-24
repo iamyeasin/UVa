@@ -2,8 +2,30 @@
 Eikhane theory ta hoilo .. je protibar amar permutation calanor dorkar nai
 suppose amar ase "abc", n = 3
 so for 3 character it'll be 3! = 6;
-so for 1 character it'll be 6/3 = 2;
-if n = 3 then, it'll 
+so for 1 character it'll be 6/3 = 2; // let's call it fct
+if n = 3 then, it'll be in the second section.
+like 0 abc
+     1 acb
+     2 bac
+     3 bca
+     4 cab
+     5 cba
+     
+     so a pure mathematical calculation will detemine the ans, no need to iterate or backtract
+     ,a interesting recursion is fine
+     as i know for 1 character iget 2 permutations
+     to find the char,
+        n % fct this will take me in the next section
+        n / fct is the desired index
+        
+        for the example
+       for first case, 3 % 2 = 1;  the desired char => 3 / 2 = 1;
+           which is from abc, b remaining ac;
+           next step, 1 % 1 = 1, 1/ 1 = 1; which is bc remaing is a;
+           next step adding a.. to the bc.
+           
+           this is the first time i solved a problem using a recursion with a mathematical pattern,
+           this is very interestinn
 
 */
 
