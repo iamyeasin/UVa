@@ -27,10 +27,10 @@ int main(){
         sz = strlen(line);
 
         if(sz > 8) {
-            vel = pvel;
+            vel = pvel; //Kepping the previous distance
             sscanf(line , "%d:%d:%d %d",&hh,&mm,&ss,&pvel);
             time = ((hh-phh) * 3600.00) + (((mm - pmm)*60.000) + (ss-pss));
-            path += ((time * vel)/3600.00);
+            path += ((time * vel)/3600.00); //Adding the previous distance.
 
         }
         else {
