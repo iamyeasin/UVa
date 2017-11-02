@@ -1,4 +1,6 @@
-/*Eikhane je company sobceye kom dam e beshi product offer kortase oidai ans. eikhane store korar kono dorkar nai*/
+/*Eikhane je company sobceye kom dam e beshi product offer kortase oidai ans. eikhane store korar kono dorkar nai
+ba kon company kon product ditase oitaw dekhar dorkar nai. karon eikhane duplicate or requirement sara onno kono product thakbo na
+*/
 
 #include<bits/stdc++.h>
 #define sf scanf
