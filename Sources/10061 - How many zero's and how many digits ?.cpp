@@ -1,3 +1,66 @@
+/*
+Optimized Solution Pattern 0.050 ms
+
+
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+    unsigned long long int N;
+    int B,i,j,p,c,num,k;
+
+    while (scanf("%llu %d",&N,&B) != EOF){
+
+          num=N; j=B;
+          for (i=2; i<=B; i++){
+              if ( !(j%i) ){
+
+                 p=0;
+                 while ( !(j%i) ){
+                       p++;
+                       j/=i;
+                 }
+
+                 c=0;k=N;
+                 while (k/i){
+                       c+=k/i;
+                       k/=i;
+                }
+                 num= (num < c/p) ? num : c/p;
+              }
+          }
+
+          float ans=0;
+          for (i=1;i<=N;i++){
+              ans+=log(i);
+          }
+          ans/=log(B); ans+=1.0;
+          ans=floor(ans);
+
+          printf("%d %.0f\n",num,ans);
+    }
+}
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 #include<bits/stdc++.h>
 #define sf scanf
 #define mx 1000005
