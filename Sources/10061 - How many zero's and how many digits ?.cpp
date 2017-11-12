@@ -42,17 +42,97 @@ int main()
     }
 }
 
-
-
-
-
-
-
 */
 
 
 
+/*0.0000 s All the time ate into finding the digits. This takes 0.0000
+#include<bits/stdc++.h>
+#define sf scanf
+#define mx 1000005
+#define pf printf
 
+using namespace std;
+
+
+const double PI = 3.141592653589793239, e = 2.7182818284590452354;
+double dp[100005];
+unsigned long long int n,cpy;
+int coff[12300];
+int limit = 1;
+
+
+
+void gen_coff(int base){
+    memset(coff, 0, sizeof coff);
+    int nx = base;
+    int i=2,k=0;
+
+    while(nx>1  && i * i<= base){
+        while(!(nx%i)){
+            coff[i]++;
+            nx /= i;
+        }
+        i++;
+    }
+    if(nx > 1) {
+        coff[nx]++;
+        limit = nx;
+    }
+    else limit = i-1;
+}
+
+
+long cal_zero(int base){
+    gen_coff(base);
+    int m =1;
+    long ans=1234223456;
+
+    for(int k=2; k<=limit; k++){
+        cpy = n;
+        long sum = 0;
+        if( coff[k] ){
+            m = k;
+            while( (cpy/m) ){
+                sum += (cpy/m);
+                m = m*k;
+            }
+            int kk = (sum / coff[k]);
+            ans = (kk < ans) ? kk : ans;
+        }
+    }
+
+    return ans;
+}
+
+int DIGIT(int B){
+
+    int N = n;
+    if(N > 100000)
+    {
+        int res = (int)((log(sqrt(2*PI*N)) + N*log(N/e))/log(B))+1;
+        return res;
+    }
+    return ceil(dp[N]/log(B) + 1e-10);
+}
+
+int main(){
+    #ifndef ONLINE_JUDGE
+//        freopen("in.txt","rt",stdin);
+//        freopen("out.txt","wt",stdout);
+    #endif
+
+    int b;
+
+    for(int i = 1; i < 100005; i++)dp[i] = dp[i-1]+log(i);
+    while( sf("%llu %d",&n,&b) != EOF){
+        pf("%d %d\n",cal_zero(b),DIGIT(b));
+    }
+
+
+    return 0;
+}
+*/
 
 
 
