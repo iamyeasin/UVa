@@ -20,8 +20,8 @@ int main(){
             int tmp; used = (fghij<10000);
             abcde = fghij * n;
 
-            tmp = (abcde); while ( tmp ) { used |= 1 << (tmp%10); (tmp/=10);}
-            tmp = (fghij); while ( tmp ) { used |= 1 << (tmp%10); (tmp/=10);}
+            tmp = (abcde); while ( tmp ) { used |= 1 << (tmp%10); (tmp/=10);} // Ultimately it makes every th bit set. so last we just check that if every bit is on or off
+            tmp = (fghij); while ( tmp ) { used |= 1 << (tmp%10); (tmp/=10);} // Setting temp%10 th bit on. 
             if(used == (1 << 10)-1){
                 printf("%0.5d / %0.5d = %d\n",abcde,fghij,n);
                 f=1;
