@@ -1,3 +1,52 @@
+/*
+
+Using looop RT : 0.010ms
+#include<bits/stdc++.h>
+#define debug(x)cout << #x << "=" << (x) << endl;
+
+
+using namespace std;
+
+int main(){
+    long n,k=0;
+
+    while ( scanf("%ld",&n) ,n ){
+        int used,fghij,abcde;
+        int f=0;
+        if(k>0)puts("");
+        k++;
+
+        for(fghij = 1234; fghij<=(98765/n); fghij++){
+            int tmp; used = (fghij<10000);
+            abcde = fghij * n;
+
+            tmp = (abcde); while ( tmp ) { used |= 1 << (tmp%10); (tmp/=10);}
+            tmp = (fghij); while ( tmp ) { used |= 1 << (tmp%10); (tmp/=10);}
+            if(used == (1 << 10)-1){
+                printf("%0.5d / %0.5d = %d\n",abcde,fghij,n);
+                f=1;
+            }
+        }
+        if(!f)printf("There are no solutions for %d.\n",n);
+
+    }
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+*/
+
 #include<bits/stdc++.h>
 #define sf scanf
 #define pf printf
