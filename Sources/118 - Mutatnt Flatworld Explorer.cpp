@@ -56,7 +56,7 @@ int main(){
 
         int tx,ty;
         for( int i=0; path[i]; i++ ){
-            tx = xi; ty = yi;
+            tx = xi; ty = yi; // saving the current point
             if( path[i] == 'L' ){
                 curDir--; if(curDir < 0 ) curDir = 3;
             }
@@ -77,7 +77,7 @@ int main(){
                         break;
                     }
                     else {
-                        xi = tx; yi = ty;
+                        xi = tx; yi = ty; // back at the point where you came from to previous point
                     }
                 }
             }
