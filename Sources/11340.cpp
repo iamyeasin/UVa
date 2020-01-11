@@ -1,3 +1,58 @@
+
+/**
+
+OPTIMIZED SOLUTION
+TIME : 0.170
+
+LOGIC : new line decimal value is 10, so, no need for loop
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    #ifndef ONLINE_JUDGE
+        freopen("in.txt","rt",stdin );
+        freopen("out.txt","wt",stdout );
+    #endif // ONLINE_JUDGE
+
+
+
+    int n,i,j,q,k,x,arr2[150],m,b;
+    long w;
+    double sum = 0,arr[150];
+    char a,s[15006],ch;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++){
+        sum=0;
+        memset(arr,0,sizeof(arr));
+        scanf("%d\n",&k);{
+            for(j=1;j<=k;j++){
+                scanf("%c %d\n",&a,&x);
+                arr[a] = x/100.00;
+            }
+            scanf("%d\n",&m);
+            int cnt = 0;
+            while( (cnt < m ) && scanf("%c",&ch) ){
+                if( (int)ch == 10 ) cnt++;
+                sum += arr[ch];
+            }
+        }
+    printf("%.2f$\n",sum);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+*/
+
+
+
 #include<bits/stdc++.h>
 
 using namespace std;
